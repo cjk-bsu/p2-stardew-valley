@@ -1,10 +1,15 @@
 /**
- *
+ * This class creates a priority queue that extends the MaxHeap class and implements
+ * PriorityQueueInterface to create and manage MaxHeap objects for use in the public
+ * MyLifeInStardew class.
  *
  * @author carsonkeller
  */
 public class MyPriorityQueue extends MaxHeap implements PriorityQueueInterface {
 
+    /**
+     * The primary constructor for the class
+     */
     public MyPriorityQueue() {
         super();
     }
