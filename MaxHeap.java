@@ -7,9 +7,9 @@
  * @author carsonkeller
  */
 public class MaxHeap {
-    private Task[] heap;
-    private int heapSize;
-    private final int DEFAULT_HEAP_ARRAY_SIZE = 10;
+    protected Task[] heap;
+    protected int heapSize;
+    protected final int DEFAULT_HEAP_ARRAY_SIZE = 10;
 
     /**
      * Primary constructor of the MaxHeap class, creating a new heap of tasks of
@@ -144,8 +144,8 @@ public class MaxHeap {
     public Task extractMax() {
         Task max = max();
         heap[1] = heap[heapSize];
-        heapSize--;
         heapify(1);
+        heapSize--;
         return max;
     }
 
@@ -164,6 +164,7 @@ public class MaxHeap {
         }
 
         heapSize++;
+        heap[heapSize] = task;
         increaseKey(task, task.getPriority());
     }
 
@@ -188,13 +189,13 @@ public class MaxHeap {
 
         int index = -1;
 
-        for (int i = 1; i < heapSize; i++) {
+        for (int i = 1; i <= heapSize; i++) {
             if (heap[i].equals(task)) {
                 index = i;
             }
         }
 
-        while (index > 1 && heap[getParent(index)].getPriority() < heap[index].getPriority()) {
+        while (index > 1 && heap[getParent(index)].compareTo(heap[index] ) == -1) {
             swapTasks(index, getParent(index));
 
             index = getParent(index);
