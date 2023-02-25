@@ -38,12 +38,12 @@ public class Task implements TaskInterface, Comparable<Task> {
 
     @Override
     public TaskType getTaskType() {
-        return taskType;
+        return this.taskType;
     }
 
     @Override
     public String getTaskDescription() {
-        return taskDescription;
+        return this.taskDescription;
     }
 
     @Override
@@ -67,10 +67,8 @@ public class Task implements TaskInterface, Comparable<Task> {
             return -1;
         } else if (this.priority > task.getPriority()) {
             return 1;
-        } else if (this.priority == task.getPriority()) {
-            return 0;
         } else {
-            return Integer.compare(this.hourCreated, task.hourCreated);
+            return Integer.compare(task.hourCreated, this.hourCreated);
         }
     }
 }
