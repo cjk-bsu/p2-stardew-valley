@@ -11,5 +11,7 @@ p2-rubric.txt
 p2-stardew-valley.iml
 
 .idea
+.DS_Store
+.class
 out/
 
